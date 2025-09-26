@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureSkillsDrive - Rwanda Racing Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <!-- Animated Banner -->
+        <div id="banner" class="banner">
+            <span>RTB COMPETITION FUTURE SKILLS</span>
+        </div>
+        
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <!-- UI Overlay -->
+        <div id="gameUI" class="ui-overlay">
+            <!-- Start Screen -->
+            <div id="startScreen" class="screen active">
+                <div class="logo">
+                    <h1 class="retro-title">FutureSkillsDrive</h1>
+                    <p class="subtitle">Rwanda's Digital Racing Challenge</p>
+                </div>
+                <div class="menu-buttons">
+                    <button id="startBtn" class="btn primary">Start Race</button>
+                    <button id="settingsBtn" class="btn">Settings</button>
+                    <button id="helpBtn" class="btn">Help</button>
+                    <button id="exitBtn" class="btn">Exit</button>
+                </div>
+            </div>
+            
+            <!-- Game HUD -->
+            <div id="gameHUD" class="hud hidden">
+                <div class="hud-top">
+                    <div class="speed-meter">
+                        <span id="speedValue">0</span> km/h
+                    </div>
+                    <div class="distance-meter">
+                        Distance: <span id="distanceValue">0</span>m
+                    </div>
+                </div>
+                <div class="hud-bottom">
+                    <div class="controls-hint">
+                        ←→ Steer | SPACE Brake | F Free Ride | R Radio | ESC Menu
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Settings Screen -->
+            <div id="settingsScreen" class="screen">
+                <h2>Settings</h2>
+                <div class="setting-item">
+                    <label>Music Volume: <input type="range" id="musicVolume" min="0" max="100" value="70"></label>
+                </div>
+                <div class="setting-item">
+                    <label>Sound Effects: <input type="range" id="sfxVolume" min="0" max="100" value="80"></label>
+                </div>
+                <button id="backToMenuBtn" class="btn">Back to Menu</button>
+            </div>
+            
+            <!-- Help Screen -->
+            <div id="helpScreen" class="screen">
+                <h2>How to Play</h2>
+                <div class="help-content">
+                    <p><strong>Objective:</strong> Reach the Magic Garden through 3 challenging stages!</p>
+                    <p><strong>Controls:</strong></p>
+                    <ul>
+                        <li>Arrow Keys: Steer left/right</li>
+                        <li>Spacebar: Brake</li>
+                        <li>F: Toggle Free Ride Mode</li>
+                        <li>R: Toggle Radio Music</li>
+                        <li>ESC: Pause/Menu</li>
+                    </ul>
+                    <p><strong>Tips:</strong> Avoid AI cars and obstacles. Each stage gets harder!</p>
+                </div>
+                <button id="backFromHelpBtn" class="btn">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/car.js"></script>
+    <script src="js/road.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/gameState.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
